@@ -1,0 +1,367 @@
+.contenedor {
+  width: 100%;
+  min-height: 100dvh;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+  overflow: hidden;
+  position: relative;
+}
+
+.fondoAnimado {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at 20% 50%,
+    rgba(249, 115, 22, 0.1) 0%,
+    transparent 50%
+  ),
+  radial-gradient(
+    circle at 80% 50%,
+    rgba(59, 130, 246, 0.1) 0%,
+    transparent 50%
+  );
+  animation: fluirFondo 8s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes fluirFondo {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.particulasContenedor {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.particula {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(249, 115, 22, 0.6);
+  animation: flotarParticula 6s infinite linear;
+  animation-delay: calc(var(--delay, 0) * 1s);
+}
+
+.particula:nth-child(1) {
+  left: 10%;
+  top: 20%;
+}
+
+.particula:nth-child(2) {
+  left: 20%;
+  top: 80%;
+}
+
+.particula:nth-child(3) {
+  left: 50%;
+  top: 10%;
+}
+
+.particula:nth-child(4) {
+  left: 80%;
+  top: 70%;
+}
+
+.particula:nth-child(5) {
+  left: 90%;
+  top: 30%;
+}
+
+@keyframes flotarParticula {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(100px);
+    opacity: 0;
+  }
+}
+
+.contenedorWelcome {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  text-align: center;
+  padding: 2rem;
+  animation: entradaPrincipal 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes entradaPrincipal {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.iconoContenedor {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: entradaIcono 1s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s backwards;
+}
+
+@keyframes entradaIcono {
+  from {
+    opacity: 0;
+    transform: scale(0);
+    rotate: -180deg;
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    rotate: 0deg;
+  }
+}
+
+.qrIcono {
+  font-size: 100px;
+  color: #f97316;
+  filter: drop-shadow(0 0 20px rgba(249, 115, 22, 0.5));
+  animation: latidoIcono 2s ease-in-out infinite;
+}
+
+@keyframes latidoIcono {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    filter: drop-shadow(0 0 10px rgba(249, 115, 22, 0.3));
+  }
+  50% {
+    transform: scale(1.1) rotate(5deg);
+    filter: drop-shadow(0 0 25px rgba(249, 115, 22, 0.7));
+  }
+}
+
+.pulso {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 3px solid rgba(249, 115, 22, 0.5);
+  border-radius: 50%;
+  animation: expandirPulso 2s ease-out infinite;
+}
+
+@keyframes expandirPulso {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+.textoPrincipal {
+  animation: entradaTexto 0.8s ease-out 0.4s backwards;
+}
+
+@keyframes entradaTexto {
+  from {
+    opacity: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  to {
+    opacity: 1;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+.titulo {
+  font-size: clamp(2rem, 8vw, 4rem);
+  color: white;
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: -2px;
+  background: linear-gradient(135deg, #f97316, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitulo {
+  font-size: clamp(1rem, 4vw, 1.5rem);
+  color: #d1d5db;
+  margin: 0.5rem 0 0 0;
+  font-weight: 400;
+  animation: entradaSubtitulo 0.8s ease-out 0.6s backwards;
+}
+
+@keyframes entradaSubtitulo {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nombre {
+  color: #f97316;
+  font-weight: 600;
+}
+
+.checkContenedor {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  animation: entradaCheck 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.8s backwards;
+}
+
+@keyframes entradaCheck {
+  from {
+    opacity: 0;
+    transform: scale(0) rotate(-45deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.checkIcon {
+  font-size: 2.5rem;
+  color: #10b981;
+  filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.5));
+  animation: rotacionCheck 2s ease-in-out infinite;
+}
+
+@keyframes rotacionCheck {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.05) rotate(5deg);
+  }
+}
+
+.mensaje {
+  color: #10b981;
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+.indicadorCarga {
+  width: 200px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  animation: entradaBarra 0.8s ease-out 1s backwards;
+}
+
+@keyframes entradaBarra {
+  from {
+    opacity: 0;
+    width: 0;
+  }
+  to {
+    opacity: 1;
+    width: 200px;
+  }
+}
+
+.barraProgreso {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #f97316,
+    transparent
+  );
+  animation: deslizarBarra 2s ease-in-out infinite;
+  border-radius: 2px;
+}
+
+@keyframes deslizarBarra {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.textoRedireccion {
+  color: #9ca3af;
+  font-size: 0.95rem;
+  margin: 0;
+  animation: entradaRedirecccion 0.8s ease-out 1.2s backwards;
+  animation-delay: 1.2s;
+}
+
+@keyframes entradaRedirecccion {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contenedorWelcome {
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .iconoContenedor {
+    width: 90px;
+    height: 90px;
+  }
+
+  .qrIcono {
+    font-size: 70px;
+  }
+
+  .titulo {
+    font-size: 2rem;
+  }
+
+  .subtitulo {
+    font-size: 1.1rem;
+  }
+
+  .indicadorCarga {
+    width: 150px;
+  }
+}

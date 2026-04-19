@@ -1,0 +1,99 @@
+.overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.68);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem;
+	z-index: 2000;
+	animation: overlayEntrar 180ms ease-out;
+}
+
+.modal {
+	width: min(460px, 100%);
+	background: #0f0f0f;
+	border: 1px solid #f97316;
+	border-radius: 14px;
+	padding: 1.25rem;
+	box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+	animation: modalEntrar 220ms ease-out;
+}
+
+.title {
+	margin: 0;
+	font-size: 1.2rem;
+	color: #f97316;
+}
+
+.description {
+	margin: 0.75rem 0 0;
+	color: #f3f4f6;
+	line-height: 1.5;
+}
+
+.actions {
+	display: flex;
+	justify-content: flex-end;
+	gap: 0.75rem;
+	margin-top: 1.25rem;
+}
+
+.cancelButton,
+.confirmButton {
+	border: 1px solid transparent;
+	border-radius: 10px;
+	padding: 0.6rem 0.95rem;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.cancelButton {
+	background: #111111;
+	color: #f97316;
+	border-color: #f97316;
+}
+
+.confirmButton {
+	background: #f97316;
+	color: #000000;
+	border-color: #f97316;
+}
+
+.cancelButton:hover,
+.confirmButton:hover {
+	filter: brightness(1.05);
+}
+
+@keyframes overlayEntrar {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes modalEntrar {
+	from {
+		opacity: 0;
+		transform: translateY(10px) scale(0.97);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
+}
+
+@media (max-width: 540px) {
+	.actions {
+		flex-direction: column-reverse;
+	}
+
+	.cancelButton,
+	.confirmButton {
+		width: 100%;
+	}
+}

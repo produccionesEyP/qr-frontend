@@ -1,0 +1,411 @@
+:root {
+	--codex-black: #000000;
+	--codex-white: #ffffff;
+	--codex-gray: #6b7280;
+	--codex-orange: #f97316;
+}
+
+.pagina {
+	min-height: 100svh;
+	width: 100%;
+	background:
+		radial-gradient(circle at 15% 15%, rgba(249, 115, 22, 0.12), transparent 35%),
+		var(--codex-black);
+	color: var(--codex-white);
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.barraSuperior {
+	position: sticky;
+	top: 0;
+	z-index: 20;
+	width: 100%;
+	padding: 1rem 1rem;
+	background: rgba(0, 0, 0, 0.9);
+	backdrop-filter: blur(5px);
+	border-bottom: 1px solid rgba(249, 115, 22, 0.25);
+}
+
+.contenidoBarra {
+	width: min(100%, 1200px);
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.logoSoftware {
+	font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+	font-weight: 800;
+	letter-spacing: 0.02em;
+	color: var(--codex-orange);
+	flex-shrink: 0;
+}
+
+.navegacion {
+	flex: 1;
+}
+
+.drawerHeader {
+	display: none;
+}
+
+.overlayMenu {
+	display: none;
+}
+
+.botonHamburguesa {
+	display: none;
+	border: 1px solid rgba(249, 115, 22, 0.35);
+	background: rgba(255, 255, 255, 0.04);
+	border-radius: 10px;
+	padding: 0.45rem;
+	width: 42px;
+	height: 42px;
+	cursor: pointer;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+
+.lineaHamburguesa {
+	display: block;
+	width: 20px;
+	height: 2px;
+	background: var(--codex-white);
+	border-radius: 99px;
+}
+
+.menuOpciones {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	gap: 0.65rem;
+	flex-wrap: wrap;
+}
+
+.itemFinal {
+	margin-left: auto;
+	padding-left: 0.55rem;
+	border-left: 1px solid rgba(249, 115, 22, 0.28);
+}
+
+.itemSesion {
+	margin-left: 0.2rem;
+}
+
+.opcionMenu {
+	border: 1px solid rgba(249, 115, 22, 0.35);
+	background: rgba(255, 255, 255, 0.04);
+	color: var(--codex-white);
+	border-radius: 10px;
+	padding: 0.55rem 0.8rem;
+	font-size: 0.92rem;
+	font-weight: 600;
+	cursor: pointer;
+	transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.opcionMenu:hover {
+	border-color: var(--codex-orange);
+	background: rgba(249, 115, 22, 0.14);
+	transform: translateY(-1px);
+}
+
+.opcionCerrarSesion {
+	border: 1px solid rgba(249, 115, 22, 0.35);
+	background: rgba(255, 255, 255, 0.04);
+	color: var(--codex-white);
+	border-radius: 10px;
+	padding: 0.55rem 0.8rem;
+	font-size: 0.92rem;
+	font-weight: 600;
+	cursor: pointer;
+	transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.opcionCerrarSesion:hover {
+	border-color: var(--codex-orange);
+	background: rgba(249, 115, 22, 0.14);
+	transform: translateY(-1px);
+}
+
+.contenidoInicial {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 2.2rem 1.2rem;
+}
+
+.contenidoInicialInicio {
+	min-height: calc(100svh - 116px);
+	display: grid;
+	place-items: center;
+	padding: 1rem;
+}
+
+.bienvenidaPanel {
+	width: min(100%, 760px);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	gap: 0.55rem;
+	padding: 1.2rem 1.05rem;
+	border: 1px solid rgba(249, 115, 22, 0.24);
+	border-radius: 16px;
+	background: linear-gradient(145deg, rgba(0, 0, 0, 0.92), rgba(26, 26, 26, 0.9));
+	box-shadow: 0 14px 36px rgba(0, 0, 0, 0.42);
+	animation: entradaSuave 550ms ease-out;
+}
+
+.iconoBienvenida {
+	width: 56px;
+	height: 56px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 999px;
+	color: var(--codex-orange);
+	font-size: 1.55rem;
+	background: rgba(249, 115, 22, 0.14);
+	border: 1px solid rgba(249, 115, 22, 0.45);
+	box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.45);
+	animation: pulsoIcono 2.2s infinite;
+}
+
+.tarjetaPlaceholder {
+	border: 1px solid rgba(255, 255, 255, 0.16);
+	border-radius: 22px;
+	background: linear-gradient(145deg, rgba(0, 0, 0, 0.92), rgba(28, 28, 28, 0.86));
+	box-shadow: 0 20px 50px rgba(0, 0, 0, 0.42);
+	padding: 1.35rem;
+}
+
+.titulo {
+	margin: 0;
+	font-size: clamp(1.4rem, 2.8vw, 2rem);
+	color: var(--codex-orange);
+}
+
+.descripcion {
+	margin: 0.5rem 0 0;
+	color: rgba(255, 255, 255, 0.82);
+	font-size: 1rem;
+}
+
+.tituloBienvenida {
+	animation: textoSube 520ms ease-out 130ms both;
+}
+
+.descripcionBienvenida {
+	margin-top: 0.3rem;
+	max-width: 64ch;
+	font-size: 0.96rem;
+	animation: textoSube 520ms ease-out 260ms both;
+}
+
+@keyframes entradaSuave {
+	from {
+		opacity: 0;
+		transform: translateY(12px) scale(0.98);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
+}
+
+@keyframes pulsoIcono {
+	0% {
+		transform: translateY(0) scale(1);
+		box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.45);
+	}
+	50% {
+		transform: translateY(-2px) scale(1.06);
+		box-shadow: 0 0 0 12px rgba(249, 115, 22, 0);
+	}
+	100% {
+		transform: translateY(0) scale(1);
+		box-shadow: 0 0 0 0 rgba(249, 115, 22, 0);
+	}
+}
+
+@keyframes textoSube {
+	from {
+		opacity: 0;
+		transform: translateY(8px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@media (max-width: 860px) {
+	.contenidoBarra {
+		flex-wrap: nowrap;
+	}
+
+	.logoSoftware {
+		font-size: 1.5rem;
+	}
+
+	.botonHamburguesa {
+		display: inline-flex;
+		z-index: 31;
+		flex-shrink: 0;
+	}
+
+	.navegacion {
+		display: block;
+		position: fixed;
+		top: 0;
+		left: -320px;
+		width: min(82vw, 300px);
+		height: 100dvh;
+		padding: 5.2rem 0.85rem 1rem;
+		background: linear-gradient(160deg, rgba(0, 0, 0, 0.97), rgba(22, 22, 22, 0.96));
+		border-right: 1px solid rgba(249, 115, 22, 0.3);
+		box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+		transition: left 0.25s ease;
+		z-index: 30;
+		overflow-y: auto;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.navegacionActiva {
+		left: 0;
+	}
+
+	.overlayMenu {
+		display: block;
+		position: fixed;
+		inset: 0;
+		background: rgba(0, 0, 0, 0);
+		pointer-events: none;
+		transition: background 0.25s ease;
+		z-index: 25;
+	}
+
+	.overlayMenuActiva {
+		background: rgba(0, 0, 0, 0.5);
+		pointer-events: auto;
+	}
+
+	.menuOpciones {
+		width: 100%;
+		flex-direction: column;
+		align-items: stretch;
+		padding-top: 0;
+		padding-bottom: 0.8rem;
+		gap: 0.5rem;
+		min-height: 100%;
+	}
+
+	.drawerHeader {
+		display: block;
+		font-size: 1.45rem;
+		font-weight: 800;
+		letter-spacing: 0.01em;
+		color: var(--codex-orange);
+		padding: 0.2rem 0.3rem 0.55rem;
+		border-bottom: 1px solid rgba(249, 115, 22, 0.24);
+	}
+
+	.itemFinal {
+		margin-left: 0;
+		margin-top: 0.95rem;
+		padding-top: 0.7rem;
+		padding-left: 0;
+		border-left: none;
+		border-top: 1px solid rgba(249, 115, 22, 0.24);
+	}
+
+	.itemSesion {
+		margin-left: 0;
+		margin-top: 0.1rem;
+	}
+
+	.opcionMenu {
+		width: 100%;
+		text-align: left;
+		justify-content: flex-start;
+	}
+
+	.opcionCerrarSesion {
+		width: 100%;
+		text-align: left;
+		justify-content: flex-start;
+	}
+
+	.bienvenidaPanel {
+		width: min(100%, 520px);
+		padding: 0.72rem 0.68rem;
+		gap: 0.45rem;
+		border-radius: 14px;
+	}
+
+	.iconoBienvenida {
+		width: 42px;
+		height: 42px;
+		font-size: 1.1rem;
+	}
+
+	.tituloBienvenida {
+		font-size: clamp(1rem, 4.5vw, 1.2rem);
+	}
+
+	.descripcionBienvenida {
+		font-size: 0.82rem;
+		line-height: 1.35;
+		max-width: 34ch;
+	}
+
+	.contenidoInicialInicio {
+		min-height: auto;
+		padding: 0.35rem 0;
+	}
+}
+
+@media (max-width: 480px) {
+	.barraSuperior {
+		padding: 0.7rem 0.75rem;
+	}
+
+	.contenidoInicial {
+		padding: 0.55rem 0.35rem;
+	}
+
+	.logoSoftware {
+		font-size: 1.35rem;
+	}
+
+	.navegacion {
+		width: min(86vw, 292px);
+		padding: 4.8rem 0.7rem 0.8rem;
+	}
+
+	.bienvenidaPanel {
+		padding: 0.64rem 0.58rem;
+	}
+
+	.descripcionBienvenida {
+		font-size: 0.79rem;
+	}
+
+	.drawerHeader {
+		font-size: 1.25rem;
+		padding: 0.1rem 0.25rem 0.45rem;
+	}
+
+	.opcionMenu,
+	.opcionCerrarSesion {
+		padding: 0.5rem 0.65rem;
+		font-size: 0.88rem;
+	}
+}

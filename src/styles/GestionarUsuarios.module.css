@@ -1,0 +1,342 @@
+:root {
+	--codex-black: #000000;
+	--codex-white: #ffffff;
+	--codex-gray: #6b7280;
+	--codex-orange: #f97316;
+}
+
+.pagina {
+	width: 100%;
+	display: grid;
+	gap: 1rem;
+	color: var(--codex-white);
+	scrollbar-width: thin;
+	scrollbar-color: rgba(249, 115, 22, 0.85) rgba(255, 255, 255, 0.08);
+}
+
+.pagina::-webkit-scrollbar {
+	width: 8px;
+}
+
+.pagina::-webkit-scrollbar-track {
+	background: rgba(255, 255, 255, 0.08);
+	border-radius: 999px;
+}
+
+.pagina::-webkit-scrollbar-thumb {
+	background: linear-gradient(180deg, #fb923c 0%, #f97316 100%);
+	border-radius: 999px;
+	border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.pagina::-webkit-scrollbar-thumb:hover {
+	background: linear-gradient(180deg, #fdba74 0%, #fb923c 100%);
+}
+
+.embebido {
+	background: transparent;
+	padding: 0;
+}
+
+.cabecera {
+	display: grid;
+	gap: 0.2rem;
+	justify-items: center;
+	text-align: center;
+}
+
+.etiqueta {
+	margin: 0;
+	font-size: 0.82rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, 0.72);
+}
+
+.titulo {
+	margin: 0;
+	font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+	color: var(--codex-orange);
+}
+
+.tarjetasResumen {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 0.85rem;
+}
+
+.tarjetaResumen {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	padding: 1rem;
+	border-radius: 16px;
+	border: 1px solid rgba(249, 115, 22, 0.3);
+	background: rgba(255, 255, 255, 0.03);
+}
+
+.iconoResumen {
+	font-size: 1.5rem;
+	color: var(--codex-orange);
+}
+
+.etiquetaResumen {
+	margin: 0;
+	font-size: 0.85rem;
+	color: rgba(255, 255, 255, 0.78);
+}
+
+.valorResumen {
+	font-size: 1.35rem;
+}
+
+.buscador {
+	display: grid;
+	gap: 0.5rem;
+	padding: 1rem;
+	border-radius: 18px;
+	background: rgba(255, 255, 255, 0.03);
+	border: 1px solid rgba(249, 115, 22, 0.38);
+}
+
+.label {
+	font-size: 0.85rem;
+	font-weight: 700;
+	color: var(--codex-gray);
+}
+
+.filaBusqueda {
+	display: flex;
+	gap: 0.75rem;
+	flex-wrap: wrap;
+}
+
+.campo {
+	width: 100%;
+	border: 1px solid rgba(107, 114, 128, 0.55);
+	background: rgba(0, 0, 0, 0.72);
+	color: var(--codex-white);
+	border-radius: 12px;
+	padding: 0.75rem 0.85rem;
+	font-size: 0.95rem;
+	outline: none;
+	box-sizing: border-box;
+}
+
+.filaBusqueda .campo {
+	flex: 1;
+	min-width: 240px;
+}
+
+.campo:focus {
+	border-color: var(--codex-orange);
+	box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.18);
+}
+
+.botonPrincipal,
+.botonSecundario,
+.botonIcono {
+	border: none;
+	border-radius: 12px;
+	padding: 0.8rem 1rem;
+	font-size: 0.95rem;
+	font-weight: 700;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.botonPrincipal {
+	background: var(--codex-orange);
+	color: var(--codex-white);
+}
+
+.botonSecundario {
+	background: rgba(255, 255, 255, 0.05);
+	border: 1px solid rgba(249, 115, 22, 0.35);
+	color: var(--codex-white);
+}
+
+.botonIcono {
+	padding: 0.55rem 0.65rem;
+	background: rgba(255, 255, 255, 0.08);
+	color: var(--codex-white);
+}
+
+.botonPeligro {
+	background: rgba(190, 18, 60, 0.22);
+}
+
+.botonPrincipal:hover,
+.botonSecundario:hover,
+.botonIcono:hover {
+	transform: translateY(-1px);
+	filter: brightness(1.06);
+}
+
+.mensajeError,
+.mensajeExito {
+	margin: 0;
+	padding: 0.8rem 0.9rem;
+	border-radius: 12px;
+	font-size: 0.92rem;
+	line-height: 1.35;
+}
+
+.mensajeError {
+	border: 1px solid rgba(251, 113, 133, 0.45);
+	background: rgba(190, 18, 60, 0.18);
+	color: #ffdada;
+}
+
+.mensajeExito {
+	border: 1px solid rgba(52, 211, 153, 0.45);
+	background: rgba(5, 150, 105, 0.18);
+	color: #dbffeb;
+}
+
+.tablaWrapper {
+	overflow-x: auto;
+	border-radius: 16px;
+	border: 1px solid rgba(249, 115, 22, 0.22);
+}
+
+.tabla {
+	width: 100%;
+	min-width: 920px;
+	border-collapse: collapse;
+	background: rgba(0, 0, 0, 0.62);
+}
+
+.tabla th,
+.tabla td {
+	padding: 0.8rem;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+	text-align: left;
+	font-size: 0.9rem;
+}
+
+.tabla th {
+	background: rgba(249, 115, 22, 0.16);
+	font-weight: 700;
+}
+
+.accionesTabla {
+	display: flex;
+	gap: 0.45rem;
+}
+
+.sinResultados {
+	text-align: center !important;
+	color: rgba(255, 255, 255, 0.76);
+}
+
+.fondoModal {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.7);
+	display: grid;
+	place-items: center;
+	z-index: 500;
+	padding: 1rem;
+}
+
+.modal {
+	width: min(100%, 520px);
+	max-height: 90dvh;
+	overflow-y: auto;
+	border-radius: 16px;
+	background: #141414;
+	border: 1px solid rgba(249, 115, 22, 0.3);
+	padding: 1rem;
+	scrollbar-width: thin;
+	scrollbar-color: rgba(249, 115, 22, 0.85) rgba(255, 255, 255, 0.08);
+}
+
+.modal::-webkit-scrollbar {
+	width: 8px;
+}
+
+.modal::-webkit-scrollbar-track {
+	background: rgba(255, 255, 255, 0.08);
+	border-radius: 999px;
+}
+
+.modal::-webkit-scrollbar-thumb {
+	background: linear-gradient(180deg, #fb923c 0%, #f97316 100%);
+	border-radius: 999px;
+	border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.modal::-webkit-scrollbar-thumb:hover {
+	background: linear-gradient(180deg, #fdba74 0%, #fb923c 100%);
+}
+
+.tituloModal {
+	margin: 0 0 0.7rem;
+	font-size: 1.2rem;
+	color: var(--codex-orange);
+}
+
+.formularioModal {
+	display: grid;
+	gap: 0.55rem;
+}
+
+.campoPassword {
+	position: relative;
+}
+
+.campoPassword .campo {
+	padding-right: 2.8rem;
+}
+
+.botonOjo {
+	position: absolute;
+	top: 50%;
+	right: 0.5rem;
+	transform: translateY(-50%);
+	border: none;
+	background: transparent;
+	color: rgba(255, 255, 255, 0.8);
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1rem;
+}
+
+.accionesModal {
+	display: flex;
+	gap: 0.55rem;
+	justify-content: flex-end;
+	margin-top: 0.5rem;
+}
+
+@media (max-width: 640px) {
+	.filaBusqueda {
+		flex-direction: column;
+	}
+
+	.filaBusqueda .campo,
+	.botonPrincipal,
+	.botonSecundario {
+		width: 100%;
+	}
+
+	.tabla {
+		min-width: 760px;
+	}
+
+	.accionesModal {
+		flex-direction: column;
+	}
+
+	.accionesModal .botonPrincipal,
+	.accionesModal .botonSecundario {
+		width: 100%;
+	}
+}
